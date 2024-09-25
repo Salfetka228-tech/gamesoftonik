@@ -1,0 +1,158 @@
+/* Основные стили для body */
+body {
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    background: linear-gradient(135deg, #000000, #2c2c54);
+    color: #00ffcc;
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Анимация заднего плана */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Стили для надписей Proud of my money */
+.watermark {
+    position: fixed;
+    font-size: 2em;
+    color: #ff00ff;
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+    font-weight: bold;
+    z-index: 1000;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.top-watermark {
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: watermarkPulse 2s infinite;
+}
+
+.bottom-watermark {
+    bottom: 10px;
+    right: 50%;
+    transform: translateX(50%);
+    animation: watermarkPulse 2s infinite reverse;
+}
+
+@keyframes watermarkPulse {
+    0% { opacity: 0.8; transform: translateX(-50%) scale(1); }
+    50% { opacity: 1; transform: translateX(-50%) scale(1.05); }
+    100% { opacity: 0.8; transform: translateX(-50%) scale(1); }
+}
+
+/* Контейнер с коэффициентом */
+.animation-box {
+    background: radial-gradient(circle, #1a1a1a, #000000);
+    border-radius: 50%;
+    width: 80vw;
+    max-width: 300px;
+    height: 80vw;
+    max-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid #ff00ff;
+    box-shadow: 0 0 50px #ff00ff;
+    position: relative;
+    animation: pulse 1.5s infinite alternate;
+}
+
+.animation-box span {
+    font-size: 2.5em;
+    color: #00ffcc;
+    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
+    animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+/* Стили для кнопок */
+.button, .deposit-button, .channel-button {
+    margin-top: 15px;
+    padding: 12px 20px;
+    background-color: #ff00ff;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff;
+    color: #0d0d0d;
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+    max-width: 90%; /* Ограничиваем ширину на маленьких экранах */
+}
+
+.button:hover, .deposit-button:hover, .channel-button:hover {
+    background-color: #ff33cc;
+    transform: scale(1.1);
+}
+
+.deposit-button {
+    background-color: #00ffcc;
+    color: #000000;
+    box-shadow: 0 0 30px #00ffcc;
+}
+
+.deposit-button:hover {
+    background-color: #33ffcc;
+    transform: scale(1.05);
+}
+
+.channel-button {
+    background-color: #6600ff;
+    color: #ffffff;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.channel-button:hover {
+    background-color: #9933ff;
+    transform: scale(1.05);
+}
+
+#processing {
+    font-size: 1em;
+    color: #ff00ff;
+    text-shadow: 0 0 10px #ff00ff;
+}
+
+/* Медиазапросы для мобильных устройств */
+@media (max-width: 600px) {
+    .animation-box {
+        width: 70vw;
+        height: 70vw;
+    }
+
+    .animation-box span {
+        font-size: 2em;
+    }
+
+    .watermark {
+        font-size: 1.5em;
+    }
+
+    .button, .deposit-button, .channel-button {
+        padding: 10px 15px;
+        font-size: 1em;
+    }
+}
