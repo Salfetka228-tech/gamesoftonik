@@ -23,7 +23,7 @@ body {
     100% { background-position: 0% 50%; }
 }
 
-/* Стили для надписей Proud of my money */
+/* Стили для верхней надписи Proud of my money */
 .watermark {
     position: fixed;
     font-size: 2em;
@@ -40,13 +40,6 @@ body {
     left: 50%;
     transform: translateX(-50%);
     animation: watermarkPulse 2s infinite;
-}
-
-.bottom-watermark {
-    bottom: 10px;
-    right: 50%;
-    transform: translateX(50%);
-    animation: watermarkPulse 2s infinite reverse;
 }
 
 @keyframes watermarkPulse {
